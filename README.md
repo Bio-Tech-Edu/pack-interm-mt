@@ -1,7 +1,7 @@
 # PACK Interativo — Água, óleo e o "superpoder" do detergente: Forças Intermoleculares
 
 <div align="center">
-<img src="assets/hero_pack.png" alt="Pack Interativo Forças Intermoleculares" height="95">
+<img src="assets/hero_pack.png" alt="Pack Interativo Forças Intermoleculares">
 
 Roteiro de Aprendizagem Interativo desenvolvido no padrão **PACK – Visão do Estudante (Plurall)** para o **Projeto Pré-Enem Digit@l MT (SEDUC-MT)** — Atividades Pós-ENEM 2026 (preparação para o ENEM 2027).
 
@@ -40,12 +40,11 @@ O arquivo `js/app.js` detecta automaticamente a presença do objeto global `wind
 
 ## 6. Créditos
 
-<div align="center">
 **🧬 Feito com carinho para os estudantes de Mato Grosso 🧬**
-  
+<div align="center">
   <img src="assets/biotech_edudesign.png" alt="Bio+Tech EduDesign" height="60">
   <img src="assets/pre_enem.png" alt="Pré-Enem Digit@l MT" height="60">
   <img src="assets/gov_mato_grosso.png" alt="Governo do Estado de Mato Grosso" height="60">
-*"A ciência precisa de você — como sempre precisou das mulheres que a construíram."*
-
 </div>
+
+**"A ciência precisa de você — como sempre precisou das mulheres que a construíram."**
