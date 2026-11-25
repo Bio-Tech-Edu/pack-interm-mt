@@ -1,8 +1,16 @@
 # PACK Interativo — Água, óleo e o "superpoder" do detergente: Forças Intermoleculares
 
+<div align="center">
+<img src="assets/hero_pack.png" alt="Pack Interativo Forças Intermoleculares" height="60">
+
 Roteiro de Aprendizagem Interativo desenvolvido no padrão **PACK – Visão do Estudante (Plurall)** para o **Projeto Pré-Enem Digit@l MT (SEDUC-MT)** — Atividades Pós-ENEM 2026 (preparação para o ENEM 2027).
 
-<img src="assets/hero_pack.png" alt="Pack Interativo Forças Intermoleculares">
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?style=for-the-badge&logo=github)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Metodologia](https://img.shields.io/badge/Metodologia-Ativa-blueviolet?style=for-the-badge)](#)
+[![ABP](https://img.shields.io/badge/ABP-Aprendizagem%20por%20Problemas-blue?style=for-the-badge)](#)
+
+</div>
 
 ## 1. Dados Pedagógicos
 - **Área do Conhecimento:** Ciências da Natureza e suas Tecnologias
@@ -30,15 +38,8 @@ O arquivo `js/app.js` detecta automaticamente a presença do objeto global `wind
 - [Relatório de Uso Responsável de IA](docs/RELATORIO_USO_IA.md)
 - [Plano de Sprints (Pós-ENEM 2026)](docs/PLANO_DE_SPRINTS.md)
 
-  <footer class="pack-footer" role="contentinfo">
-    <div class="logos">
-      <img src="assets/biotech_edudesign.png" alt="Bio+Tech EduDesign">
-      <img src="assets/pre_enem.png" alt="Pré-Enem Digit@l MT">
-      <img src="assets/gov_mato_grosso.png" alt="Governo do Estado de Mato Grosso">
-    
-      <div class="container">
-        <p><strong>Projeto Pré-Enem Digit@l MT — SEDUC-MT</strong> • Atividades Pós-ENEM 2026 (Preparação ENEM 2027)</p>
-        <p class="muted">Arquitetura educacional aberta em HTML5, CSS3, JavaScript (ES6+) com integração xAPI/H5P.</p>
-      </div>
-    </div>
-  </footer>
+<div align="center">
+  <img src="assets/biotech_edudesign.png" alt="Bio+Tech EduDesign" height="60">
+  <img src="assets/pre_enem.png" alt="Pré-Enem Digit@l MT" height="60">
+  <img src="assets/gov_mato_grosso.png" alt="Governo do Estado de Mato Grosso" height="60">
+</div>
