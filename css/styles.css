@@ -615,6 +615,36 @@ body {
   margin: 0.25rem 0;
 }
 
+.pack-footer{
+  padding:2rem 1rem 3rem;
+  text-align:center;
+  border-top:1px solid var(--line);
+  margin-top:3rem;
+  color:var(--ink-soft);
+  font-size:.85rem
+}
+.pack-footer.logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1.5rem;
+  margin-bottom:1rem;
+  flex-wrap:wrap
+}
+
+.pack-footer .logos img{
+    height:50px;
+    object-fit:contain;
+    opacity:.92;
+    background:rgba(255,255,255,.92);
+    padding:6px 10px;
+    border-radius:8px
+}
+
+.pack-footer a{color:var(--fis);text-decoration:none}
+.pack-footer a:hover{text-decoration:underline}
+
+
 /* Desktop Breakpoint */
 @media (min-width: 768px) {
   .header-grid {
