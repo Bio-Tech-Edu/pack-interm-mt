@@ -6,9 +6,11 @@
   <meta name="description" content="Roteiro de Aprendizagem Interativo PACK - Química (Pré-Enem Digit@l MT / SEDUC-MT): Polaridade Molecular, Forças Intermoleculares e Ação de Tensoativos." />
   <title>PACK Química | Água, óleo e o superpoder do detergente — Pré-Enem Digit@l MT</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- Sem media="print" para que .print-only também fique oculto na tela -->
+  <link rel="stylesheet" href="css/print.css" />
 </head>
 <body>
-  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+  <a class="skip-link no-print" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
   <header class="pack-header" role="banner">
     <div class="container header-grid">
@@ -19,14 +21,29 @@
           Descubra como a polaridade molecular e as interações entre moléculas explicam da limpeza da frigideira ao teste da gasolina e à inativação de vírus.
         </p>
       </div>
-      <div class="meta-pills" aria-label="Competências e habilidades do ENEM">
-        <span class="pill">C5 / H18</span>
-        <span class="pill">C7 / H24 • H25</span>
-        <span class="pill">Padrão PACK</span>
+
+      <div class="header-aside">
+        <div class="meta-pills" aria-label="Competências e habilidades do ENEM">
+          <span class="pill">C5 / H18</span>
+          <span class="pill">C7 / H24 • H25</span>
+          <span class="pill">Padrão PACK</span>
+        </div>
+
+        <!-- Ações de exportação/impressão (apenas na interface web) -->
+        <div class="header-actions no-print" role="group" aria-label="Opções de PDF e impressão">
+          <button
+            type="button"
+            class="btn btn-secondary btn-print-shortcut"
+            onclick="window.print()"
+            title="Abrir caixa de impressão do navegador"
+          >
+            Imprimir página
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="progress-wrapper container" aria-label="Progresso no roteiro de aprendizagem">
+    <div class="progress-wrapper container no-print" aria-label="Progresso no roteiro de aprendizagem">
       <div class="progress-header">
         <span id="progress-label">Progresso do Roteiro: <strong>15%</strong></span>
         <span id="xapi-status" class="xapi-badge" aria-live="polite">Telemetria xAPI: Modo Local Ativo</span>
@@ -36,7 +53,7 @@
       </div>
     </div>
 
-    <nav class="pack-nav container" aria-label="Etapas do roteiro PACK">
+    <nav class="pack-nav container no-print" aria-label="Etapas do roteiro PACK">
       <div class="tablist" role="tablist">
         <button
           id="tab-partiu"
@@ -82,7 +99,7 @@
     >
       <article class="card hero-card">
         <div class="hero-content">
-          <span class="step-tag">Etapa 1 • Engajamento e Cotidiano</span>
+          <span class="step-tag">Etapa 1 • #partiu — Engajamento e Cotidiano</span>
           <h2>Por que duas gotas de detergente fazem o que litros de água não conseguem?</h2>
           <p>
             Você já tentou lavar uma frigideira cheia de óleo usando <strong>só água</strong>? Pode abrir a torneira no máximo e esfregar: a água escorre, a gordura continua grudada e parece que os dois se recusam a fazer amizade. Aí você pinga duas gotinhas de detergente e... pronto! A gordura se solta na hora e vai embora pelo ralo.
@@ -96,7 +113,6 @@
           <svg viewBox="0 0 560 220" role="img" aria-labelledby="svg-title-comp svg-desc-comp" class="responsive-svg">
             <title id="svg-title-comp">Comparação: Água e Óleo versus Água, Óleo e Detergente</title>
             <desc id="svg-desc-comp">Dois copos lado a lado. À esquerda, água azul embaixo e óleo amarelo separado em cima. À direita, emulsão homogênea com pequenas micelas dispersas após adição de detergente.</desc>
-            <!-- Copo 1 -->
             <rect x="40" y="30" width="180" height="150" rx="14" fill="#eef6ff" stroke="#1d4ed8" stroke-width="3" />
             <rect x="43" y="105" width="174" height="72" rx="10" fill="#3b82f6" opacity="0.85" />
             <rect x="43" y="65" width="174" height="40" fill="#facc15" opacity="0.92" />
@@ -104,34 +120,32 @@
             <text x="130" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Água (Polar)</text>
             <text x="130" y="204" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Sem detergente: 2 fases</text>
 
-            <!-- Seta -->
             <path d="M242 105 L312 105" stroke="#0f766e" stroke-width="4" stroke-linecap="round" />
             <polygon points="312,97 328,105 312,113" fill="#0f766e" />
             <text x="282" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#0f766e">+ Detergente</text>
 
-            <!-- Copo 2 -->
             <rect x="340" y="30" width="180" height="150" rx="14" fill="#e0f2fe" stroke="#0f766e" stroke-width="3" />
             <rect x="343" y="65" width="174" height="112" rx="10" fill="#7dd3fc" opacity="0.8" />
-            <!-- Micelas estilizadas -->
             <circle cx="385" cy="100" r="14" fill="#facc15" stroke="#0f766e" stroke-width="3" stroke-dasharray="4 2" />
             <circle cx="440" cy="135" r="16" fill="#facc15" stroke="#0f766e" stroke-width="3" stroke-dasharray="4 2" />
             <circle cx="482" cy="98" r="12" fill="#facc15" stroke="#0f766e" stroke-width="3" stroke-dasharray="4 2" />
             <circle cx="395" cy="150" r="11" fill="#facc15" stroke="#0f766e" stroke-width="3" stroke-dasharray="4 2" />
             <text x="430" y="204" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Com detergente: Emulsão (Micelas)</text>
           </svg>
-          <figcaption>Esquema comparativo (simula o objeto H5P Image/GIF da etapa #partiu).</figcaption>
+          <figcaption>Esquema comparativo da ação emulsificante do detergente na mistura água + óleo.</figcaption>
         </figure>
       </article>
 
       <article class="card">
         <h3>Teste seus palpites antes da teoria!</h3>
-        <p class="muted">Clique em cada pergunta provocativa para revelar a pista investigativa (equivalente ao H5P Accordion).</p>
+        <p class="muted no-print">Clique em cada pergunta provocativa para revelar a pista investigativa (equivalente ao H5P Accordion).</p>
+        <p class="muted print-only">Reflita sobre as questões investigativas abaixo e compare suas hipóteses com as pistas científicas.</p>
 
         <div class="accordion" id="hypotheses-accordion">
           <div class="accordion-item">
             <button class="accordion-trigger" aria-expanded="false" aria-controls="hint-1" id="btn-hint-1">
               <span>1. Se água e óleo são líquidos à temperatura ambiente, por que eles não se misturam no mesmo copo?</span>
-              <span class="icon" aria-hidden="true">+</span>
+              <span class="icon no-print" aria-hidden="true">+</span>
             </button>
             <div id="hint-1" class="accordion-content" role="region" aria-labelledby="btn-hint-1" hidden>
               <p><strong>Pista investigativa:</strong> Olhe para a distribuição elétrica das moléculas! As moléculas de água funcionam como pequenos ímãs elétricos e se atraem fortemente entre si, "excluindo" o óleo, que não possui polos elétricos permanentes.</p>
@@ -141,7 +155,7 @@
           <div class="accordion-item">
             <button class="accordion-trigger" aria-expanded="false" aria-controls="hint-2" id="btn-hint-2">
               <span>2. O que o detergente tem de tão especial para "conversar" com a água e com a gordura ao mesmo tempo?</span>
-              <span class="icon" aria-hidden="true">+</span>
+              <span class="icon no-print" aria-hidden="true">+</span>
             </button>
             <div id="hint-2" class="accordion-content" role="region" aria-labelledby="btn-hint-2" hidden>
               <p><strong>Pista investigativa:</strong> Pense em um mediador de "dupla personalidade": uma extremidade da molécula tem afinidade por gordura (apolar) e a outra tem afinidade por água (polar/iônica).</p>
@@ -151,7 +165,7 @@
           <div class="accordion-item">
             <button class="accordion-trigger" aria-expanded="false" aria-controls="hint-3" id="btn-hint-3">
               <span>3. Por que a água (18 g/mol) ferve a 100 °C enquanto o metano (16 g/mol) já é gás a −161 °C?</span>
-              <span class="icon" aria-hidden="true">+</span>
+              <span class="icon no-print" aria-hidden="true">+</span>
             </button>
             <div id="hint-3" class="accordion-content" role="region" aria-labelledby="btn-hint-3" hidden>
               <p><strong>Pista investigativa:</strong> Como as massas molares são quase idênticas, a diferença gritante vem da <strong>intensidade das atrações entre as moléculas</strong>: na água ocorrem ligações de hidrogênio muito fortes!</p>
@@ -159,7 +173,7 @@
           </div>
         </div>
 
-        <div class="section-actions">
+        <div class="section-actions no-print">
           <button class="btn btn-primary" data-go-tab="borala">Avançar para: Bora lá! →</button>
         </div>
       </article>
@@ -176,10 +190,10 @@
       <article class="card">
         <div class="carousel-header">
           <div>
-            <span class="step-tag">Etapa 2 • Construção Conceitual (Microlearning)</span>
+            <span class="step-tag">Etapa 2 • Bora lá! — Construção Conceitual (Microlearning)</span>
             <h2>Desvendando as Forças Intermoleculares</h2>
           </div>
-          <span class="slide-counter" id="slide-counter" aria-live="polite">Slide 1 de 6</span>
+          <span class="slide-counter no-print" id="slide-counter" aria-live="polite">Slide 1 de 6</span>
         </div>
 
         <div class="carousel-viewport" aria-live="polite">
@@ -196,10 +210,37 @@
             <div class="callout-tip">
               <strong>Atenção no ENEM:</strong> O CO<sub>2</sub> (O=C=O) possui ligações covalentes polares, mas sua geometria linear anula os vetores — portanto, a molécula é <strong>apolar</strong>!
             </div>
-            <p class="resource-note">
+
+            <p class="resource-note no-print">
               <strong>Recurso Interativo Complementar:</strong> Experimente alterar a eletronegatividade no simulador gratuito
               <a href="https://phet.colorado.edu/pt_BR/simulations/molecule-polarity" target="_blank" rel="noopener noreferrer">PhET Colorado — Polaridade da Molécula</a>.
             </p>
+
+            <!-- Bloco QR Code exclusivo para versão impressa/PDF -->
+            <aside class="print-only qr-box" aria-label="QR Code para o simulador PhET Colorado">
+              <svg class="qr-svg" viewBox="0 0 84 84" width="76" height="76" role="img" aria-label="QR Code do simulador PhET Polaridade da Molécula">
+                <rect width="84" height="84" fill="#ffffff" stroke="#0f172a" stroke-width="1.5" />
+                <!-- Marcadores de posição (finder patterns) -->
+                <rect x="6" y="6" width="20" height="20" fill="#0f172a" />
+                <rect x="10" y="10" width="12" height="12" fill="#ffffff" />
+                <rect x="13" y="13" width="6" height="6" fill="#0f172a" />
+
+                <rect x="58" y="6" width="20" height="20" fill="#0f172a" />
+                <rect x="62" y="10" width="12" height="12" fill="#ffffff" />
+                <rect x="65" y="13" width="6" height="6" fill="#0f172a" />
+
+                <rect x="6" y="58" width="20" height="20" fill="#0f172a" />
+                <rect x="10" y="62" width="12" height="12" fill="#ffffff" />
+                <rect x="13" y="65" width="6" height="6" fill="#0f172a" />
+
+                <!-- Matriz ilustrativa (substituir pelo SVG real gerado da URL definitiva, se desejar) -->
+                <path fill="#0f172a" d="M32 8h4v4h-4zm8 0h8v4h-8zm-8 8h8v4h-8zm12 0h4v8h-4zm-12 8h4v4h-4zm8 4h8v4h-8zM8 32h8v4H8zm12 0h4v8h-4zm8 4h8v4h-8zm12-4h8v4h-8zm12 4h8v4h-8zm12-4h12v4H64zM8 44h4v8H8zm8 0h8v4h-8zm12 4h8v4h-8zm12-4h4v12h-4zm8 4h8v4h-8zm12-4h8v8h-8zm12 4h4v8h-4zM32 60h8v4h-8zm12 0h4v8h-4zm8 4h8v4h-8zm12-4h12v4H64zM32 70h4v8h-4zm8 4h12v4H40zm16-4h8v8h-8zm12 4h8v4h-8z" />
+              </svg>
+              <div class="qr-meta">
+                <strong>Simulador Interativo (PhET Colorado — Polaridade da Molécula)</strong>
+                <p>Aponte a câmera do celular ou acesse: <code>https://phet.colorado.edu/pt_BR/simulations/molecule-polarity</code></p>
+              </div>
+            </aside>
           </div>
 
           <!-- SLIDE 2 -->
@@ -297,14 +338,15 @@
           <div class="slide" data-slide="5">
             <h3>5/6 • O "superpoder" anfifílico: Explore a Micela!</h3>
             <p>
-              Sabões e detergentes são <strong>tensoativos</strong> (moléculas anfifílicas): possuem uma <strong>cauda apolar</strong> (hidrofóbica) e uma <strong>cabeça polar/iônica</strong> (hidrofílica). Clique nos botões numerados abaixo para explorar cada região da micela (simulação de <em>H5P Image Hotspots</em>):
+              Sabões e detergentes são <strong>tensoativos</strong> (moléculas anfifílicas): possuem uma <strong>cauda apolar</strong> (hidrofóbica) e uma <strong>cabeça polar/iônica</strong> (hidrofílica).
+              <span class="no-print">Clique nos botões numerados abaixo para explorar cada região da micela (simulação de <em>H5P Image Hotspots</em>):</span>
+              <span class="print-only">Observe no diagrama numerado abaixo como cada região da micela atua na remoção da gordura:</span>
             </p>
 
             <div class="hotspot-layout">
               <div class="micelle-stage">
                 <svg viewBox="0 0 320 260" role="img" aria-label="Diagrama em corte de uma micela de detergente em água" class="responsive-svg">
                   <rect x="0" y="0" width="320" height="260" rx="14" fill="#e0f2fe" />
-                  <!-- Água ao redor -->
                   <text x="26" y="34" font-size="12" font-weight="700" fill="#0369a1">H₂O</text>
                   <text x="268" y="36" font-size="12" font-weight="700" fill="#0369a1">H₂O</text>
                   <text x="26" y="240" font-size="12" font-weight="700" fill="#0369a1">H₂O</text>
@@ -336,9 +378,24 @@
                     <circle cx="101" cy="189" r="10" />
                     <circle cx="219" cy="189" r="10" />
                   </g>
+
+                  <!-- Marcadores numéricos (visíveis na impressão para casar com a legenda) -->
+                  <g class="print-only">
+                    <circle cx="160" cy="108" r="9" fill="#1e293b" />
+                    <text x="160" y="112" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+
+                    <circle cx="222" cy="130" r="9" fill="#1e293b" />
+                    <text x="222" y="134" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+
+                    <circle cx="244" cy="105" r="9" fill="#1e293b" />
+                    <text x="244" y="109" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+
+                    <circle cx="282" cy="56" r="9" fill="#1e293b" />
+                    <text x="282" y="60" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">4</text>
+                  </g>
                 </svg>
 
-                <div class="hotspot-buttons" role="group" aria-label="Pontos interativos da micela">
+                <div class="hotspot-buttons no-print" role="group" aria-label="Pontos interativos da micela">
                   <button class="hotspot-btn active" data-hotspot="nucleo">1. Núcleo de Gordura</button>
                   <button class="hotspot-btn" data-hotspot="cauda">2. Cauda Apolar</button>
                   <button class="hotspot-btn" data-hotspot="cabeca">3. Cabeça Polar/Iônica</button>
@@ -346,10 +403,18 @@
                 </div>
               </div>
 
-              <div class="hotspot-info" id="hotspot-info" aria-live="polite">
+              <div class="hotspot-info no-print" id="hotspot-info" aria-live="polite">
                 <h4>1. Núcleo de Gordura (Lipídios)</h4>
                 <p>Composto por moléculas apolares (triglicerídeos/óleos). Fica protegido no interior da micela, sem contato direto com a água.</p>
               </div>
+
+              <!-- Legenda numerada completa para PDF/Impressão -->
+              <ol class="print-only micelle-legend">
+                <li><strong>Núcleo de Gordura (Lipídios):</strong> composto por moléculas apolares (triglicerídeos/óleos), isoladas no interior da micela sem contato direto com a água.</li>
+                <li><strong>Cauda Apolar (Hidrofóbica):</strong> longa cadeia carbônica do tensoativo que interage com a gordura por forças de <em>dipolo induzido (London)</em>.</li>
+                <li><strong>Cabeça Polar/Iônica (Hidrofílica):</strong> extremidade carregada ou polar voltada para fora, que interage fortemente com a água por <em>íon-dipolo</em> ou <em>ligação de hidrogênio</em>.</li>
+                <li><strong>Meio Aquoso (H<sub>2</sub>O):</strong> envolve a superfície externa da micela e arrasta a gotícula de gordura emulsificada durante o enxágue.</li>
+              </ol>
             </div>
           </div>
 
@@ -376,13 +441,13 @@
           </div>
         </div>
 
-        <div class="carousel-controls">
+        <div class="carousel-controls no-print">
           <button id="prev-slide" class="btn btn-secondary" disabled>← Slide Anterior</button>
           <div class="slide-dots" id="slide-dots" aria-label="Indicadores de slide"></div>
           <button id="next-slide" class="btn btn-primary">Próximo Slide →</button>
         </div>
 
-        <div class="section-actions">
+        <div class="section-actions no-print">
           <button class="btn btn-accent" data-go-tab="entendeu">Ir para: E aí, entendeu? (Questões ENEM) →</button>
         </div>
       </article>
@@ -397,33 +462,79 @@
       hidden
     >
       <article class="card">
-        <span class="step-tag">Etapa 3 • Verificação Formativa (Rigor Matriz ENEM)</span>
+        <span class="step-tag">Etapa 3 • E aí, entendeu? — Verificação Formativa (Rigor Matriz ENEM)</span>
         <h2>E aí, entendeu? Teste seus conhecimentos!</h2>
-        <p class="muted">
+        <p class="muted no-print">
           Responda às 3 questões inéditas no formato ENEM (A–E). Ao conferir cada resposta, você receberá a explicação pedagógica detalhada — inclusive o porquê do erro conceitual caso escolha um distrator.
         </p>
 
         <div id="quiz-container" class="quiz-container"></div>
 
-        <div id="quiz-summary" class="quiz-summary" hidden aria-live="polite">
+        <div id="quiz-summary" class="quiz-summary no-print" hidden aria-live="polite">
           <h3>Desempenho Final no PACK</h3>
           <p id="quiz-score-text"></p>
           <button id="btn-reset-quiz" class="btn btn-secondary">Refazer Questões</button>
         </div>
+
+        <!-- Bloco exclusivo de impressão: Gabarito e Análise de Distratores (Padrão SEDUC-MT) -->
+        <section class="print-only gabarito-print" aria-label="Gabarito Comentado e Análise de Distratores">
+          <header class="gabarito-header">
+            <span class="step-tag">Encarte Pedagógico • Gabarito e Análise de Distratores (SEDUC-MT)</span>
+            <h3>Resolução Comentada das Questões do Roteiro</h3>
+            <p class="muted">
+              Consulte esta seção após resolver as questões acima. Cada item apresenta a justificativa científica da alternativa correta e o diagnóstico do erro conceitual dos distratores.
+            </p>
+          </header>
+
+          <article class="gabarito-item">
+            <h4>Questão 1 — Polaridade Molecular e Teste da Proveta (ANP)</h4>
+            <p class="item-meta"><strong>Matriz ENEM:</strong> C5 / H18 • <strong>Nível TRI:</strong> Fácil • <strong>Gabarito:</strong> Conforme enunciado da Q1 no roteiro (migração do etanol para a fase aquosa por ligações de hidrogênio)</p>
+            <p><strong>Justificativa da Correta:</strong> O etanol (CH<sub>3</sub>CH<sub>2</sub>OH) possui o grupo hidroxila (&minus;OH), capaz de formar <em>ligações de hidrogênio</em> intensas com as moléculas de água, superando as interações dipolo induzido com os hidrocarbonetos apolares da gasolina.</p>
+            <ul class="distractors-list">
+              <li><strong>Erro de distrator — Quebra de ligação covalente:</strong> confunde processo físico de dissolução com reação química; nenhuma ligação covalente é rompida na extração.</li>
+              <li><strong>Erro de distrator — Afinidade da gasolina com a água:</strong> desconsidera que hidrocarbonetos são apolares e imiscíveis em meio aquoso polar.</li>
+              <li><strong>Erro de distrator — Reação do NaCl com o etanol:</strong> o sal apenas eleva a polaridade e a densidade da fase aquosa (efeito <em>salting-out</em>), sem reagir quimicamente com o álcool.</li>
+              <li><strong>Erro de distrator — Diferença exclusiva de massa molar:</strong> ignora que a solubilidade depende prioritariamente da compatibilidade das forças intermoleculares.</li>
+            </ul>
+          </article>
+
+          <article class="gabarito-item">
+            <h4>Questão 2 — Forças Intermoleculares e Pontos de Ebulição</h4>
+            <p class="item-meta"><strong>Matriz ENEM:</strong> C7 / H24 • <strong>Nível TRI:</strong> Médio • <strong>Gabarito:</strong> Conforme enunciado da Q2 no roteiro (maior PE associado à intensidade das ligações de hidrogênio)</p>
+            <p><strong>Justificativa da Correta:</strong> A ebulição exige energia térmica para vencer atrações entre moléculas vizinhas. Substâncias com H ligado a F, O ou N (como água e etanol) formam ligações de hidrogênio, apresentando pontos de ebulição muito superiores aos de moléculas apolares de massa molar próxima (como o CH<sub>4</sub>).</p>
+            <ul class="distractors-list">
+              <li><strong>Erro de distrator — Massa molar como único critério:</strong> falha ao comparar H<sub>2</sub>O (18 g/mol; 100 &deg;C) e hexano (86 g/mol; 69 &deg;C).</li>
+              <li><strong>Erro de distrator — Confusão com ligação intramolecular:</strong> atribui a ebulição à ruptura de ligações covalentes O&minus;H em vez de forças intermoleculares.</li>
+              <li><strong>Erro de distrator — Generalização de hidrogênio na fórmula:</strong> supõe erroneamente que o CH<sub>4</sub> realiza ligação de hidrogênio por conter átomos de H.</li>
+              <li><strong>Erro de distrator — Inversão de volatilidade:</strong> associa forças intermoleculares mais fortes a maior volatilidade, quando a relação é inversamente proporcional.</li>
+            </ul>
+          </article>
+
+          <article class="gabarito-item">
+            <h4>Questão 3 — Ação de Tensoativos, Micelas e Saúde/Ambiente</h4>
+            <p class="item-meta"><strong>Matriz ENEM:</strong> C7 / H25 • <strong>Nível TRI:</strong> Difícil • <strong>Gabarito:</strong> Conforme enunciado da Q3 no roteiro (caráter anfifílico com formação de micelas e biodegradabilidade linear)</p>
+            <p><strong>Justificativa da Correta:</strong> Os tensoativos apresentam estrutura anfifílica: sua cauda apolar interage por dipolo induzido com lipídios (gorduras ou envelope viral) e sua cabeça polar/iônica interage com a água, formando micelas dispersáveis. Cadeias lineares favorecem a biodegradação microbiana.</p>
+            <ul class="distractors-list">
+              <li><strong>Erro de distrator — Detergente totalmente polar ou totalmente apolar:</strong> impede a mediação simultânea entre a fase aquosa e a fase lipídica.</li>
+              <li><strong>Erro de distrator — Inversão da orientação da micela em água:</strong> coloca as cabeças polares voltadas para a gordura e as caudas apolares para a água.</li>
+              <li><strong>Erro de distrator — Degradação química do vírus por pH extremo:</strong> desconsidera o mecanismo físico-químico de solubilização da bicamada lipídica.</li>
+              <li><strong>Erro de distrator — Cadeia ramificada como mais biodegradável:</strong> inverte o fato ambiental; cadeias ramificadas resistem à ação enzimática de microrganismos, gerando espuma persistente.</li>
+            </ul>
+          </article>
+        </section>
       </article>
     </section>
   </main>
 
   <footer class="pack-footer" role="contentinfo">
     <div class="logos">
-      <img src="assets/biotech_edudesign.png" alt="Bio+Tech EduDesign">
-      <img src="assets/pre_enem.png" alt="Pré-Enem Digit@l MT">
-      <img src="assets/gov_mato_grosso.png" alt="Governo do Estado de Mato Grosso">
-    
-      <div class="container">
-        <p><strong>Projeto Pré-Enem Digit@l MT — SEDUC-MT</strong> • Atividades Pós-ENEM 2026 (Preparação ENEM 2027)</p>
-        <p class="muted">Arquitetura educacional aberta em HTML5, CSS3, JavaScript (ES6+) com integração xAPI/H5P.</p>
-      </div>
+      <img src="assets/biotech_edudesign.png" alt="Bio+Tech EduDesign" />
+      <img src="assets/pre_enem.png" alt="Pré-Enem Digit@l MT" />
+      <img src="assets/gov_mato_grosso.png" alt="Governo do Estado de Mato Grosso" />
+    </div>
+    <div class="container">
+      <p><strong>Projeto Pré-Enem Digit@l MT — SEDUC-MT</strong> • Atividades Pós-ENEM 2026 (Preparação ENEM 2027)</p>
+      <p class="muted">Arquitetura educacional aberta em HTML5, CSS3, JavaScript (ES6+) com integração xAPI/H5P.</p>
     </div>
   </footer>
 

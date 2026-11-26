@@ -1,49 +1,298 @@
-@page {
-  size: A4 portrait;
-  margin: 18mm 14mm 18mm 14mm;
+/* ==========================================================================
+   PACK Química — Pré-Enem Digit@l MT (SEDUC-MT)
+   Folha de estilos dedicada para Impressão e Geração de PDF via Playwright
+   ========================================================================== */
+
+/* Oculta elementos exclusivos de PDF na visualização em tela */
+@media screen {
+  .print-only {
+    display: none !important;
+  }
 }
 
 @media print {
-  /* 1. Preserva cores de fundo, badges e variáveis :root do Design System PACK */
+  @page {
+    size: A4 portrait;
+    margin: 18mm 14mm 18mm 14mm;
+  }
+
   * {
+    box-shadow: none !important;
+    text-shadow: none !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  /* 2. Oculta UI interativa e revela legendas/QR Codes do PDF */
-  .no-print, .carousel-controls, .tooltip-trigger-hint {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  /* 1. Controle de visibilidade */
+  .no-print {
     display: none !important;
   }
+
   .print-only {
     display: block !important;
   }
 
-  /* 3. Impede cortes no meio de SVGs, slides, tabelas e questões */
-  .slide-card,
-  .svg-wrapper,
-  .question-card,
-  .hotspot-legend,
-  figure,
-  tr {
+  span.print-only {
+    display: inline !important;
+  }
+
+  g.print-only {
+    display: inline !important;
+  }
+
+  /* 2. Expansão forçada de todas as abas, slides e accordions ocultos */
+  .tab-panel,
+  .tab-panel[hidden],
+  .slide,
+  .accordion-content,
+  .accordion-content[hidden] {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* 3. Layout e contêineres */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+
+  .pack-header {
+    position: static !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #0f766e;
+    border-radius: 6px;
+    padding: 12px 16px !important;
+    margin-bottom: 14px;
+  }
+
+  .pack-header h1 {
+    font-size: 16pt !important;
+    line-height: 1.25;
+    margin: 6px 0;
+    color: #0f172a !important;
+  }
+
+  .pack-header .subtitle {
+    font-size: 10pt;
+    color: #334155 !important;
+  }
+
+  .card {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px;
+    padding: 12px 14px !important;
+    margin-bottom: 12px !important;
+    background: #ffffff !important;
+  }
+
+  /* 4. Controle inteligente de quebras de página */
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+    color: #0f172a !important;
+  }
+
+  .visual-box,
+  .callout-tip,
+  .accordion-item,
+  .mini-card,
+  .qr-box,
+  .gabarito-item,
+  .data-table,
+  .hotspot-layout,
+  figure {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* 4. Evita títulos órfãos no pé da página */
-  h1, h2, h3, .section-badge {
-    break-after: avoid;
-    page-break-after: avoid;
+  /* Inicia cada etapa principal em nova seção limpa quando necessário */
+  #panel-borala,
+  #panel-entendeu {
+    break-before: page;
+    page-break-before: always;
   }
 
-  /* 5. Garante SVGs nítidos, proporcionais e sem corte lateral */
-  svg {
-    max-width: 100% !important;
-    height: auto !important;
-    overflow: visible;
+  /* Slides em sequência vertical */
+  .slide {
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 10px;
+    margin-top: 10px;
   }
 
-  /* 6. Repete cabeçalho caso uma tabela longa cruze páginas */
-  thead {
-    display: table-header-group;
+  .slide:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  /* 5. Accordions abertos como cartões de estudo */
+  .accordion-trigger {
+    width: 100%;
+    text-align: left;
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1;
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+
+  .accordion-content {
+    border: 1px solid #cbd5e1;
+    border-top: none;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+  }
+
+  /* 6. Grades e tabelas */
+  .cards-3col {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .cards-2col {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .table-scroll {
+    overflow: visible !important;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin-top: 8px;
+  }
+
+  .data-table th,
+  .data-table td {
+    border: 1px solid #94a3b8;
+    padding: 5px 8px;
+    text-align: left;
+  }
+
+  .data-table th {
+    background: #f1f5f9 !important;
+  }
+
+  /* 7. Componentes exclusivos de PDF (.print-only) */
+  .qr-box {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    background: #f8fafc !important;
+  }
+
+  .qr-meta p {
+    margin: 2px 0 0;
+    font-size: 9pt;
+    color: #334155;
+  }
+
+  .qr-meta code {
+    font-size: 8.5pt;
+    word-break: break-all;
+  }
+
+  .hotspot-layout {
+    display: grid !important;
+    grid-template-columns: 240px 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+
+  .micelle-legend {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 9.5pt;
+  }
+
+  .micelle-legend li {
+    margin-bottom: 6px;
+  }
+
+  /* Encarte de Gabarito em página dedicada ao final do PDF */
+  .gabarito-print {
+    break-before: page;
+    page-break-before: always;
+    margin-top: 16px;
+    padding-top: 8px;
+  }
+
+  .gabarito-item {
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+
+  .gabarito-item h4 {
+    margin: 0 0 4px;
+    font-size: 10.5pt;
+  }
+
+  .gabarito-item .item-meta {
+    font-size: 9pt;
+    color: #334155;
+    margin: 0 0 6px;
+  }
+
+  .distractors-list {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    font-size: 9.2pt;
+  }
+
+  .distractors-list li {
+    margin-bottom: 3px;
+  }
+
+  /* Rodapé com logotipos proporcionais */
+  .pack-footer {
+    margin-top: 16px;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 8.5pt;
+  }
+
+  .pack-footer .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+  }
+
+  .pack-footer .logos img {
+    max-height: 36px;
+    width: auto;
   }
 }
